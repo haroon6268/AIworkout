@@ -23,9 +23,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="winter" className="bg-base-300">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-base-100`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-base-100 overflow-scroll`}
       >
-        <div className="flex flex-col h-screen overflow-auto">
+        <div className="flex flex-col h-screen">
           <Nav />
           <main className="flex-1">{children}</main>
           <Footer />
