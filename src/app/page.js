@@ -57,7 +57,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="h-[80vh] flex px-8items-center justify-center space-x-8 max-w-[1000px] mx-auto lg:flex-row xs:flex-col my-10">
+      <div className="h-[80vh] flex px-8items-center justify-center space-x-8 max-w-[1000px] mx-auto lg:flex-row xs:flex-col-reverse my-10">
         <div className="flex-1 flex items-center justify-center flex-col space-y-8">
           <Steps />
           <button className="btn btn-primary">Get Started!</button>
