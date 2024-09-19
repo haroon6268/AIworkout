@@ -20,8 +20,6 @@ export async function GET(req) {
 }
 
 export async function POST(req) {
-  //   const key =
-  //     "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";
   const data = await req.json(req.body);
   const openai = new OpenAI();
   await dbConnect();
