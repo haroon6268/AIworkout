@@ -1,7 +1,6 @@
 const fetcher = async (url = "", options = {}) => {
-  const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://localhost:3000";
+  const baseUrl = "https://aiworkout-nine.vercel.app";
+
   let res = await fetch(`${baseUrl}${url}`, { ...options });
   res = await res.json();
   return res;
