@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Footer from "./components/Footer";
+import Steps from "./components/Steps";
+import PhoneMockup from "./components/PhoneMockup";
 
 export default function Home() {
   return (
@@ -21,7 +23,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="h-[50vh] flex px-8 items-center justify-center space-x-8 max-w-[1700px] mx-auto">
+      <div className="h-[50vh] flex px-8 items-center justify-center space-x-8 max-w-[1500px] mx-auto my-10">
         <div className="card bg-base-300 xs:w-[80%] lg:w-[60%] h-[50%] flex flex-col items-center justify-center p-5">
           <h2 className="card-title font-extrabold text-2xl text-center">
             What's better than a free workout plan?
@@ -29,7 +31,7 @@ export default function Home() {
           <p className="text-center mt-2">A FREE AI generated workout plan!</p>
         </div>
       </div>
-      <div className="h-[50vh] px-8 flex xs:flex-col lg:flex-row max-w-[1700px] mx-auto">
+      <div className="h-[50vh] px-8 flex xs:flex-col lg:flex-row max-w-[1500px] mx-auto my-10">
         <div className="flex flex-col justify-center items-center flex-1">
           <h2 className="text-xl text-center font-bold">
             🏋️ Personalized Workout Plans
@@ -53,6 +55,18 @@ export default function Home() {
           <p className="text-center">
             New plans on demand—no more boring routines!
           </p>
+        </div>
+      </div>
+      <div className="h-[80vh] flex px-8items-center justify-center space-x-8 max-w-[1000px] mx-auto lg:flex-row xs:flex-col my-10">
+        <div className="flex-1 flex items-center justify-center flex-col space-y-8">
+          <Steps />
+          <button className="btn btn-primary">Get Started!</button>
+        </div>
+        <div
+          className="flex-1 xs:h-[50%] lg:h-fit flex items-center justify-center"
+          style={{ margin: "0" }}
+        >
+          <PhoneMockup />
         </div>
       </div>
     </>

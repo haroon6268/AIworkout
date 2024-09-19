@@ -6,7 +6,7 @@ import CardHolder from "../components/CardHolder";
 const InfoPage = () => {
   const [data, setData] = useState({ progress: 1 });
   return (
-    <div className="flex flex-col justify-center items-center h-full space-y-10">
+    <div className="flex flex-col justify-center items-center space-y-10 h-full">
       {data.progress != 4 ? (
         <progress
           className="progress progress-primary w-56"
