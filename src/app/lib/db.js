@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-isConnected = false;
+let isConnected = false;
 
 export async function dbConnect() {
   if (isConnected) {
