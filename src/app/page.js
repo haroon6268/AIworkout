@@ -6,7 +6,7 @@ import PhoneMockup from "./components/PhoneMockup";
 export default function Home() {
   return (
     <>
-      <div className="hero h-[65vh] px-8 max-w-[1700px] mx-auto">
+      <div className="hero h-[85vh] px-8 max-w-[1700px] mx-auto">
         <div className="hero-content text-center ">
           <div className="max-w-md lg:max-w-lg">
             <h1 className="text-5xl font-bold lg:text-6xl">

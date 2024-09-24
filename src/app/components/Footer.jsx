@@ -5,8 +5,7 @@ const Footer = () => {
     <footer className="footer footer-center bg-base-300 text-base-content p-5">
       <aside>
         <p className="flex items-center">
-          Made with ❤️ by <span className="font-bold">&nbsp;Haroon</span>{" "}
-          <img src="/me.png" className="h-8 w-8 rounded-[50%] ml-1"></img>
+          Made by <span className="font-bold">&nbsp;Haroon&nbsp;</span> :)
         </p>
       </aside>
     </footer>

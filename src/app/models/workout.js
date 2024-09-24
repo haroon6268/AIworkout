@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const workoutSchema = new Schema({
   name: String,
-  workout: String,
+  workout: Object,
 });
 
 const WorkoutModel =

@@ -37,14 +37,35 @@ export async function POST(req) {
   if (fitnessGoals?.strengthGain) {
     goals += "Strength Gain, ";
   }
-  const content = `Please create me a workout plan. Here are the requirments: Days per Week: ${daysPerWeek}, Goals:${goals}  `;
+  const content = `
+Create a workout plan in JSON format based on the following details:
+- Days per Week: ${daysPerWeek}
+- Goals: ${goals}
+
+Please structure the output as follows:
+{
+  "data": [
+    {"day": "day_of_week" 
+     "exercises": [
+        {
+          "name": "exercise_name",
+          "sets": number_of_sets,
+          "reps": number_of_reps,
+          "rest": rest_time_between_sets
+        }
+      }]
+    },
+  ]
+}
+I want you to ONLY output the JSON Object. I am parsing this serverside so it must only be JSON. Make sure that the days are in a form of an array.
+`;
   const completion = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     messages: [
       {
         role: "system",
         content:
-          "You are a personal trainer who specializes in creating workout plans. I want you to make the output JSX, don't include newline chars, and include everything within just 1 div. Im using tailwindcss.",
+          "You are a personal trainer who specializes in creating workout plans.",
       },
       {
         role: "user",
@@ -52,13 +73,18 @@ export async function POST(req) {
       },
     ],
   });
-  console.log(completion.choices[0].message);
+  console.log(completion.choices[0].message.content);
+  let parsed;
+  try {
+    parsed = await JSON.parse(completion.choices[0].message.content);
+  } catch {
+    return NextResponse.json({ status: 500, message: "Something went Wrong!" });
+  }
   const workoutDoc = new WorkoutModel({
     name: name,
-    workout: completion.choices[0].message.content,
+    workout: parsed,
   });
   const data2 = await workoutDoc.save();
-  console.log(data2);
 
   return NextResponse.json({ status: 200, data: { id: data2._id.toString() } });
 }

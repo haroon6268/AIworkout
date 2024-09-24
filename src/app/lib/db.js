@@ -1,13 +1,10 @@
 import mongoose from "mongoose";
 
-global.mongoose = {
-  promise: null,
-  conn: null,
-};
+isConnected = false;
 
 export async function dbConnect() {
-  if (global.mongoose && global.mongoose.conn) {
-    return global.mongoose.conn;
+  if (isConnected) {
+    return;
   } else {
     const conString =
       "mongodb+srv://halmadanidev:haroon2003@cluster0.52ggmj2.mongodb.net/Workouts";
@@ -15,10 +12,7 @@ export async function dbConnect() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    global.mongoose = {
-      conn: await promise,
-      promise,
-    };
-    return await promise;
+    isConnected = true;
+    return;
   }
 }

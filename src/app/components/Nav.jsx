@@ -14,9 +14,11 @@ const Nav = () => {
       >
         <path d="m536-84-56-56 142-142-340-340-142 142-56-56 56-58-56-56 84-84-56-58 56-56 58 56 84-84 56 56 58-56 56 56-142 142 340 340 142-142 56 56-56 58 56 56-84 84 56 58-56 56-58-56-84 84-56-56-58 56Z" />
       </svg>
-      <Link href={"/"} className="btn btn-ghost text-xl primary-content">
-        WorkoutWiz
-      </Link>
+      <div className="max-w-[1700px] w-full">
+        <Link href={"/"} className="btn btn-ghost text-xl primary-content">
+          WorkoutWiz
+        </Link>
+      </div>
     </div>
   );
 };
